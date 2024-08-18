@@ -17,21 +17,50 @@
 </head>
 
 <body>
-  <main class="mt-5">
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+<!-- inicio del navbar -->
+
+  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+      
+      <span class="fs-4" style="padding-left: 20px;">eMercado</span>
+    </a>
+
+    <ul class="nav nav-pills">
+      <!-- <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li> -->
+      <li class="nav-item"><a href="categories.html" class="nav-link" style="color: orange;">Categorías</a></li>
+      <li class="nav-item"><a href="#" class="nav-link" style="color: orange;"> Comprar</a></li>
+     
+    </ul>
+  </header>
+  <!-- fin del navbar -->
+
+  <div class="container d-flex" style="justify-content: center;">
+    <form class="py-5">
+      <h1 class="h3 mb-3 fw-normal text-center">Iniciar sesión</h1>
+  
+      <div class="form-floating mt-5" style="max-width: 400px; justify-content: center;">
+        <input type="email" class="form-control" id="floatingInput" placeholder="nombre@ejemplo.com">
+        <label for="floatingInput" class="text-secondary">Email</label>
       </div>
-    </div>
-  </main>
-  <footer class="text-muted">
+      <div class="form-floating" style="max-width: 400px; justify-content: center;">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Contraeña">
+        <label for="floatingPassword" class="text-secondary">Contraseña</label>
+      </div>
+  
+      
+      <button class="w-100 btn btn-lg btn-primary mt-5" style="background-color: orange; border: none;" type="submit">Iniciar sesión</button>
+      
+    </form>
+  </div>
+
+  <!-- inicio del footer -->
+  <footer class="fixed-bottom" style="padding-bottom: 30px;">
     <div class="container">
-      <p class="float-end">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+      
+      <p class="text-center">Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
     </div>
   </footer>
+  <!-- fin del footer -->
   <script src="js/login.js"></script>
 </body>
 
