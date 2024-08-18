@@ -12,3 +12,11 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "products.html"
     });
 });
+
+const loginExitoso = localStorage.getItem('UsuarioRegistrado');
+
+if(!loginExitoso) {
+    window.location.href = 'login.html'
+}else{
+    console.log("El usuario ya esta registrado")
+}
