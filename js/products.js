@@ -1,8 +1,8 @@
-fetch('https://japceibal.github.io/emercado-api/cats_products/101.json')
+fetch('https://japceibal.github.io/emercado-api/cats_products/101.json') //Creo el fetch de la API e-mercado, en este caso de los productos de la categoría auto
     .then(response => response.json())  //recibo la respuesta y la transformo en un json
-    .then(datos => {                    //informacion que recibo
+    .then(datos => {                    //informacion que recibo de la API
         let autos = '';                 //creo una variable donde voy a guardar todas las cards que voy a crear
-        for (let i = 0; i < datos.products.length; i++) {           //creo un for que va a crear cada una de las card según el largo de el array productos 
+        for (let i = 0; i < datos.products.length; i++) {           //creo una iteración for que va a crear cada una de las card según el largo de el array productos 
           const cardAuto = 
         `<div class="container d-flex" style="justify-content: center;">
             <div class="card mb-3" style="max-width: 900px;">
@@ -30,13 +30,12 @@ fetch('https://japceibal.github.io/emercado-api/cats_products/101.json')
             </div>
         </div>`;  
 
-        autos += cardAuto;
+        autos += cardAuto;      //en la variable autos se va a guardar cada una de las cards auto 
     }
-        const container = document.createElement('div');
-        container.innerHTML = autos;
-        document.body.appendChild(container);
+        const container = document.createElement('div'); //con el dom creo un div donde voy a guardar las cards de cada auto
+        container.innerHTML = autos;                     //agrego el div creado al html y le agrego dentro la variable autos donde estan cada una de las cards de los autos
+        document.body.appendChild(container);             //especifico que el div que cree será hijo del body, osea estará adentro de la etiqueta body
     })
-    .catch(error => console.log('error', error))
+    .catch(error => console.log('error', error))        //en caso de que ocurra un error en la obtención de la información, mostrará en la consola el código del error
 
 
-    // document.getElementById('#nombreAuto').textContent = datos.products[0].name
