@@ -13,10 +13,10 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 });
 
-const loginExitoso = localStorage.getItem('UsuarioRegistrado');
+const loginExitoso = localStorage.getItem('UsuarioRegistrado');    //creo un espacio de memoria donde guardo la información si el usuario está registrado
 
-if(!loginExitoso) {
-    window.location.href = 'login.html'
-}else{
-    console.log("El usuario ya esta registrado")
+if(!loginExitoso) {                                     //si el login no es exitoso
+    window.location.href = 'login.html'                 //redirige a la página login
+}else{                                                  //sino
+    console.log("El usuario ya esta registrado")        //imprime en la consola que el usuario ya está registrado
 }
