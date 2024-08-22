@@ -1,4 +1,4 @@
-fetch('https://japceibal.github.io/emercado-api/cats_products/101.json') //Creo el fetch de la API e-mercado, en este caso de los productos de la categoría auto
+fetch('https://japceibal.github.io/emercado-api/cats_products/101.json')  //Creo el fetch de la API e-mercado, en este caso de los productos de la categoría auto
     .then(response => response.json())  //recibo la respuesta y la transformo en un json
     .then(datos => {                    //informacion que recibo de la API
         let autos = '';                 //creo una variable donde voy a guardar todas las cards que voy a crear
