@@ -1,31 +1,11 @@
-body {
-    background-image: url('fondo.jpg');
-    background-repeat: no-repeat; 
+  body{
+    background-image: url(fondo.jpg);
+  }
     
-   }
-   
-   #imagen {
-       width:35%; /* Ajusta la imagen al tamaño del contenedor */
-       height:35%; /* Ajusta la imagen al tamaño del contenedor */
-       object-fit: cover; /* Alto del recuadro (ajustado a un tamaño pequeño) */
-       overflow: hidden; /* Oculta la parte de la imagen que se sale del recuadro */
-       border-radius: 37.5px; /* Radio de borde para hacer el contenedor ovalado (la mitad de la altura) */
-       position: fixed; /* Fija el contenedor en una posición específica en la pantalla */
-       left: 200px; /* Ajusta la distancia desde el borde izquierdo de la pantalla */
-       top: 50%; /* Centra el contenedor verticalmente en la pantalla */
-       transform: translateY(-50%); /* Ajusta el contenedor para centrarlo verticalmente */
-       border: 3px solid #ffa500;
-   }
-   
-   /* General container styles */
+    /* General container styles */
    #formularioLogin {
        display: flex;
        justify-content: center;
-     }
-     
-     /* Form styles */
-     #formularioLogin form {
-       padding: 2.5rem; /* py-5 */
      }
      
      /* Heading styles */
@@ -33,14 +13,6 @@ body {
        margin-bottom: 1.5rem; /* mb-3 */
        font-weight: 600; /* fw-normal */
        text-align: center;
-     }
-     
-     /* Floating label styles */
-     .form-floating {
-       max-width: 500px;
-       margin-top: 1.5rem; /* mt-5 */
-       display: flex;
-       justify-content: center;
      }
      
      /* Input styles */
@@ -80,13 +52,9 @@ body {
        display: flex;
        justify-content: center;
      }
-     
-     /* Estilo del botón */
-     button {
-       width: 100%; /* Ajusta el ancho al 100% del formulario */
-       background-color: #ffa500;
-       border: none;
-       border-radius: 0.25rem;
-     }
-     
+#logo-jap{
+  display: flex;
+  width: 400px;
+  margin-left: 100px;
+}
    

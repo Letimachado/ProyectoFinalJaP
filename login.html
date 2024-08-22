@@ -22,7 +22,6 @@
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
       <span class="fs-4" style="padding-left: 20px;">eMercado</span>
     </a>
-
     <ul class="nav nav-pills">
       <li class="nav-item"><a href="categories.html" class="nav-link" style="color: orange;">Categorías</a></li>
       <li class="nav-item"><a href="#" class="nav-link" style="color: orange;"> Comprar</a></li>
@@ -30,21 +29,25 @@
   </header>
   <!-- fin del navbar -->
 
+  <img src="login.jpg" alt="Logo Jap" id="logo-jap">
+
   <!-- inicio login -->
+   <main>
   <div id="formularioLogin"class="container d-flex" style="justify-content: center;">
-    <form class="py-5">
+    <form class="py-5" style="border: 2px solid #ccc; border-radius: 10px; padding: 20px;">
       <h1 class="h3 mb-3 fw-normal text-center">Iniciar sesión</h1>
       <div class="form-floating mt-5" style="max-width: 400px; justify-content: center;">
-        <input type="email" class="form-control" id="floatingInput" placeholder="nombre@ejemplo.com">
+        <input type="email" class="form-control" id="floatingInput" placeholder="nombre@ejemplo.com" required>
         <label for="floatingInput" class="text-secondary">Email</label>
       </div>
       <div class="form-floating" style="max-width: 400px; justify-content: center;">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Contraeña">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Contraeña" required>
         <label for="floatingPassword" class="text-secondary">Contraseña</label>
       </div>
-      <button class="w-100 btn btn-lg btn-primary mt-5" style="background-color: orange; border: none;" type="submit">Iniciar sesión</button>
+      <button class="w-100 btn btn-lg btn-primary mt-5" style="background-color: rgb(255, 128, 10); border: none;" type="submit">Iniciar sesión</button>
     </form>
   </div>
+</main>
   <!-- fin login -->
 
   <!-- inicio del footer -->
