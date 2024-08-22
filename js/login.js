@@ -1,7 +1,7 @@
 const login = document.getElementById('formularioLogin'); //Creamos un espacio de memoria donde mediante el DOM llamamos al formulario
-login.addEventListener('submit', function(e) {
-    e.preventDefault();                                  //controlamos el evento de enviar el formulario
-
+localStorage.clear();
+ login.addEventListener('submit', function(e) { //controlamos el evento de enviar el formulario
+  e.preventDefault();  
     const email = document.getElementById('floatingInput').value;               //la información que se ingresa en el input email
     const contraseña = document.getElementById('floatingPassword').value;       //la información que se ingresa en el input contraseña
 

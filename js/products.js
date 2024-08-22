@@ -17,7 +17,7 @@ fetch('https://japceibal.github.io/emercado-api/cats_products/101.json') //Creo 
                         <h5 class="card-title">${datos.products[i].name}</h5>
                       </div>
                       <div class="col-md-5">
-                        <h5 class="card-title">Precio:${datos.products[i].currency + + datos.products[i].cost}</h5>
+                        <h5 class="card-title">Precio:${datos.products[i].currency} ${datos.products[i].cost}</h5>
                       </div>
                     </div>
                     <p class="mb-0">Descripción:</p>
