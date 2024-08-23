@@ -5,16 +5,16 @@ fetch('https://japceibal.github.io/emercado-api/cats_products/101.json')  //Creo
         for (let i = 0; i < datos.products.length; i++) {           //creo una iteración for que va a crear cada una de las card según el largo de el array productos 
           const cardAuto = 
         `<div class="container d-flex" style="justify-content: center;">
-            <div class="card mb-3" style="max-width: 900px;">
+            <div class="card mb-3" style="max-width: 900px; border: solid; border-color: orange;">
               <div class="row g-2">
-                <div class="col-md-4">
+                <div class="col-md-4"> 
                   <img src="${datos.products[i].image}" class="img-fluid rounded-start" alt="imagen" id="imgAuto">
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
                     <div class="row">
                       <div class="col-md-7 d-flex">
-                        <h5 class="card-title">${datos.products[i].name}</h5>
+                        <h5 class="card-title" style="font-family: Impact">${datos.products[i].name}</h5>
                       </div>
                       <div class="col-md-5">
                         <h5 class="card-title">Precio:${datos.products[i].currency} ${datos.products[i].cost}</h5>
