@@ -11,10 +11,10 @@
   <link href="css/style-login.css" rel="stylesheet">
 </head>
 
-<body style="background-image: url(img/fondo.jpg);">
+<body>
 <!-- inicio del navbar -->
-<div>
-<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+<div class="">
+<header class="d-flex flex-wrap justify-content-center py-3 border-bottom">
     <a href="/index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
       <span class="fs-4" style="padding-left: 20px;">eMercado</span>
     </a>
@@ -28,28 +28,36 @@
   <!-- fin del navbar -->
 
   <!-- inicio login -->
-  <img  src="img/login.png" alt="Logo ovalado" id="imagen">
-  <div id="formularioLogin" class="container">
-    <div id="oval-container">
-    <form>
-      <h1 class="h3">Iniciar sesión</h1>
-      <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInput" placeholder="nombre@ejemplo.com" required>
-        <label for="floatingInput" class="text-secondary">Usuario</label>
+  <div class="container py-5" id="contenedorPrincipalLogin">
+   <div class="row justify-content-center">
+      <div class="col-xl-6 col-12" id="conteinerImgLogin">
+          <img src="img/login.png" alt="Logo ovalado" id="imagenLogin" class="oval-container">
       </div>
-      <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" required>
-        <label for="floatingPassword" class="text-secondary">Contraseña</label>
+      <div class="col-xl-6 col-12" id="conteinerFormLogin">
+        <div id="formularioLogin" class="container">
+            <div>
+            <form>
+              <h1 class="h3">Iniciar sesión</h1>
+              <div class="form-floating">
+                <input type="email" class="form-control" id="floatingInput" placeholder="nombre@ejemplo.com" required>
+                <label for="floatingInput" class="text-secondary">Usuario</label>
+              </div>
+              <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" required>
+                <label for="floatingPassword" class="text-secondary">Contraseña</label>
+              </div>
+              <button class="w-100 btn btn-lg btn-primary mt-5" style="background-color: #ffa500; border: none;" type="submit">INGRESAR</button>
+            </form>
+            </div>
+          </div>
       </div>
-      <button class="w-100 btn btn-lg btn-primary mt-5" style="background-color: #ffa500; border: none;" type="submit">INGRESAR</button>
-    </form>
     </div>
   </div>
-</div>
+ 
   <!-- fin login -->
 
   <!-- inicio del footer -->
-  <footer class="fixed-bottom" style="padding-bottom: 30px;">
+  <footer style="padding-bottom: 30px; background-color: #fff0d4;">
     <div class="container">
       <p class="text-center">Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
     </div>
