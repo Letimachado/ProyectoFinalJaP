@@ -1,22 +1,7 @@
-body {
-    
-    background-repeat: no-repeat; 
-    
+
+   #imagenLogin{
+    max-width: 80%;
    }
-   
-   #imagen {
-       width:35%; /* Ajusta la imagen al tamaño del contenedor */
-       height:35%; /* Ajusta la imagen al tamaño del contenedor */
-       object-fit: cover; /* Alto del recuadro (ajustado a un tamaño pequeño) */
-       overflow: hidden; /* Oculta la parte de la imagen que se sale del recuadro */
-       border-radius: 37.5px; /* Radio de borde para hacer el contenedor ovalado (la mitad de la altura) */
-       position: fixed; /* Fija el contenedor en una posición específica en la pantalla */
-       left: 200px; /* Ajusta la distancia desde el borde izquierdo de la pantalla */
-       top: 50%; /* Centra el contenedor verticalmente en la pantalla */
-       transform: translateY(-50%); /* Ajusta el contenedor para centrarlo verticalmente */
-       border: 3px solid #ffa500;
-   }
-   
    /* General container styles */
    #formularioLogin {
        display: flex;
@@ -37,27 +22,28 @@ body {
      
      /* Floating label styles */
      .form-floating {
-       max-width: 500px;
+      max-width: 100%;
        margin-top: 1.5rem; /* mt-5 */
        display: flex;
        justify-content: center;
+       border-color: #ffa500;
      }
-     
+  
      /* Input styles */
      .form-control {
        border-radius: 0.25rem;
+       border-color: orange;
      }
      
      #formularioLogin {
        display: flex;
-       justify-content: flex-end; /* Mueve el rectángulo ovalado hacia la derecha */
        align-items: center; /* Centra verticalmente */
-       height: 70vh; /* Ocupa toda la altura de la pantalla */
+       height: auto; /* Ocupa toda la altura de la pantalla */
        padding-right: 2rem; /* Ajusta el espaciado a la derecha si es necesario */
      }
      
      /* Estilo del rectángulo ovalado */
-     #oval-container {
+     .oval-container {
        background-color: #ffffff; /* Color de fondo del rectángulo ovalado */
        border-radius: 30px; /* Ajusta el valor para obtener el ovalado deseado */
        box-shadow: 0 4px 8px #ffa500(0, 0, 0, 0.1); /* Sombra para darle profundidad */
@@ -68,18 +54,9 @@ body {
        border: 3px solid #ffa500;
      }
      
-     /* Estilo del formulario */
-     #oval-container form {
-       margin: 0; /* Elimina el margen del formulario */
-     }
+    
      
-     /* Estilo de los campos flotantes */
-     .form-floating {
-       max-width: 100%; /* Ajusta el ancho al 100% del formulario */
-       margin-top: 1.5rem; /* mt-5 */
-       display: flex;
-       justify-content: center;
-     }
+
      
      /* Estilo del botón */
      button {
@@ -88,5 +65,27 @@ body {
        border: none;
        border-radius: 0.25rem;
      }
+
+     #conteinerFormLogin{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+     }
+     #conteinerImgLogin{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+     background-image: url("img\fondo.jpg");
+     }
+
+     #contenedorPrincipalLogin{
+      min-height: 100vh;
+      background-color: #fff0d4;
+      margin: 0;
+      padding: 0;
+      max-width: 100%;
+      max-height: 100%;
+     }
+     
      
    
