@@ -22,7 +22,6 @@ fetch('https://japceibal.github.io/emercado-api/cats_products/101.json')  //Creo
                     </div>
                     <p class="mb-0">Descripción:</p>
                     <p>${datos.products[i].description}</p>
-                    <br>
                     <p class="card-text"><small class="text-muted">Vendidos: ${datos.products[i].soldCount}</small></p>
                   </div>
                 </div>
