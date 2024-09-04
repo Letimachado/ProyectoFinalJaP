@@ -1,14 +1,17 @@
-fetch('https://japceibal.github.io/emercado-api/cats_products/101.json')  //Creo el fetch de la API e-mercado, en este caso de los productos de la categoría auto
+const idCategoria = localStorage.getItem('catID');
+
+fetch(`https://japceibal.github.io/emercado-api/cats_products/${idCategoria}.json`)  //Creo el fetch de la API e-mercado, en este caso de los productos de la categoría auto
     .then(response => response.json())  //recibo la respuesta y la transformo en un json
     .then(datos => {                    //informacion que recibo de la API
-        let autos = '';                 //creo una variable donde voy a guardar todas las cards que voy a crear
+        let titulo = `<h2 class="text-center mb-5 mt-5">Categoría: ${datos.catName}</h1>`
+        let productos = '';                 //creo una variable donde voy a guardar todas las cards que voy a crear
         for (let i = 0; i < datos.products.length; i++) {           //creo una iteración for que va a crear cada una de las card según el largo de el array productos 
-          const cardAuto = 
+          const cardProductos = 
         `<div class="container d-flex" style="justify-content: center;">
-            <div class="card mb-3" style="max-width: 900px; border: solid; border-color: orange;">
+            <div class="card mb-3" style="max-width: 900px;">
               <div class="row g-2">
                 <div class="col-md-4"> 
-                  <img src="${datos.products[i].image}" class="img-fluid rounded-start" alt="imagen" id="imgAuto">
+                  <img src="${datos.products[i].image}" class="img-thumbnail" alt="imagen" id="imgAuto">
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
@@ -29,10 +32,10 @@ fetch('https://japceibal.github.io/emercado-api/cats_products/101.json')  //Creo
             </div>
         </div>`;  
 
-        autos += cardAuto;      //en la variable autos se va a guardar cada una de las cards auto 
+        productos += cardProductos;      //en la variable productos se va a guardar cada una de las cards auto 
     }
         const container = document.createElement('div'); //con el dom creo un div donde voy a guardar las cards de cada auto
-        container.innerHTML = autos;                     //agrego el div creado al html y le agrego dentro la variable autos donde estan cada una de las cards de los autos
+        container.innerHTML = titulo + productos;                     //agrego el div creado al html y le agrego dentro la variable productos donde estan cada una de las cards de los productos
         document.body.appendChild(container);             //especifico que el div que cree será hijo del body, osea estará adentro de la etiqueta body
     })
     .catch(error => console.log('error', error))        //en caso de que ocurra un error en la obtención de la información, mostrará en la consola el código del error
