@@ -38,6 +38,7 @@ fetch(`https://japceibal.github.io/emercado-api/cats_products/${idCategoria}.jso
         container.innerHTML = titulo + productos;                     //agrego el div creado al html y le agrego dentro la variable productos donde estan cada una de las cards de los productos
         document.body.appendChild(container);             //especifico que el div que cree será hijo del body, osea estará adentro de la etiqueta body
     })
+    
     .catch(error => console.log('error', error))        //en caso de que ocurra un error en la obtención de la información, mostrará en la consola el código del error
 
 
