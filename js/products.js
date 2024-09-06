@@ -1,6 +1,6 @@
 const idCategoria = localStorage.getItem('catID');
 
-fetch(`https://japceibal.github.io/emercado-api/cats_products/${idCategoria}.json`)  //Creo el fetch de la API e-mercado, en este caso de los productos de la categoría auto
+fetch(`https://japceibal.github.io/emercado-api/cats_products/${idCategoria}.json`)  //Creo el fetch de la API e-mercado con los productos de la categoría
     .then(response => response.json())  //recibo la respuesta y la transformo en un json
     .then(datos => {                    //informacion que recibo de la API
         let titulo = `<h2 class="text-center mb-5 mt-5">Categoría: ${datos.catName}</h1>`
