@@ -28,7 +28,7 @@
   
           const productList = document.getElementById('product-list'); // Obtén el contenedor de productos
           productList.innerHTML = listaProductos.map(producto => `
-              <div class="container d-flex" style="justify-content: center;">
+              <div onclick="setProdId(${producto.id})" class="container d-flex" style="justify-content: center;">
                   <div class="card mb-3" style="max-width: 900px; border: solid; border-color: orange;">
                       <div class="row g-2">
                           <div class="col-md-4">
@@ -76,3 +76,8 @@
       }
     
     });
+
+    function setProdId(id) {
+        localStorage.setItem("prodId", id);
+        window.location = "product-info.html"
+    }
