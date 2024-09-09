@@ -36,10 +36,32 @@
 
 <!-- fin del navbar -->
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+    <div id="loader" class="loader">
+      <div class="spinner"></div>
+      <p>Cargando producto...</p>
+  </div>
+    <div class="container" id="product-container">
+      <!-- Contenedor principal -->
+      <div class="product-detail">
+          <!-- Imagen del producto a la izquierda -->
+          <div class="product-image">
+              <img id="product-main-image" src="" alt="Imagen del producto">
+          </div>
+
+          <!-- Detalles del producto a la derecha -->
+          <div class="product-info">
+              <h2 id="product-name"></h2>
+              <p id="product-description"></p>
+              <p><strong>Categoría:</strong> <span id="product-category"></span></p>
+              <p><strong>Vendidos:</strong> <span id="product-sold"></span></p>
+              <p><strong>Precio:</strong> <span id="product-cost"></span> <span id="product-currency"></span></p>
+          </div>
       </div>
+
+      <!-- Sección de imágenes relacionadas o adicionales -->
+      <h3>Imágenes Relacionadas</h3>
+      <div class="related-images" id="related-images"></div>
+  </div>
     </div>
   </main>
   <footer class="text-muted">
