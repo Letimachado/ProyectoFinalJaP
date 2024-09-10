@@ -36,7 +36,8 @@ async function loadProductInfo(product) {
                     relatedImagesContainer.appendChild(img);
                 }
             });
-            toggleLoader(false);
+            toggleLoader(false); 
+            
         } else {
             console.error('Producto no encontrado');
             window.location.href = 'products.html';
