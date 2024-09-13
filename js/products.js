@@ -20,7 +20,9 @@
               // Configurar el evento de ordenamiento
               document.getElementById('sort-order').addEventListener('change', () => {
                   aplicarFiltrosYOrden();
-              });
+                });
+                // Configurar el evento de búsqueda
+                document.getElementById('buscador').addEventListener('input', () => { aplicarFiltrosYOrden(); });
           })
           .catch(error => console.log('error', error));
     
@@ -59,10 +61,12 @@
           const minPrice = parseFloat(document.getElementById('min-price').value) || 0;
           const maxPrice = parseFloat(document.getElementById('max-price').value) || Infinity;
           const sortValue = document.getElementById('sort-order').value;
-    
-          let productosFiltrados = productos.filter(producto =>
-              producto.cost >= minPrice && producto.cost <= maxPrice
-          );
+          const searchText = document.getElementById('buscador').value.toLowerCase();
+
+          let productosFiltrados = productos 
+          .filter(producto => producto.cost >= minPrice && producto.cost <= maxPrice ) 
+          .filter(producto => // Filtrar productos por nombre o descripción que coincida con la búsqueda 
+            producto.name.toLowerCase().includes(searchText) || producto.description.toLowerCase().includes(searchText) ); 
     
           if (sortValue === 'price-asc') {
               productosFiltrados.sort((a, b) => a.cost - b.cost);
@@ -74,6 +78,8 @@
     
           mostrarProductos(productosFiltrados);
       }
+
+
     
     });
 
