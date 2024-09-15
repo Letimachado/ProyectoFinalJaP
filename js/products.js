@@ -6,11 +6,9 @@
           .then(response => response.json())
           .then(datos => {
               productos = datos.products; // Guardar los productos en la variable
-              
+              mostrarProductos(productos); // Mostrar los productos inicialmente
+             
 
-              // Mostrar los productos inicialmente
-              mostrarProductos(productos);
-    
               // Configurar el evento de filtrado
               document.getElementById('filter-form').addEventListener('submit', (event) => {
                   event.preventDefault();
@@ -21,9 +19,24 @@
               document.getElementById('sort-order').addEventListener('change', () => {
                   aplicarFiltrosYOrden();
                 });
-                // Configurar el evento de búsqueda
-                document.getElementById('buscador').addEventListener('input', () => { aplicarFiltrosYOrden(); });
-          })
+
+             // Configurar el evento de búsqueda
+                document.getElementById('buscador').addEventListener('input', () => { aplicarFiltrosYOrden(); 
+                });
+
+            // Configurar el evento de eliminar filtros
+               document.getElementById('reset-filters').addEventListener('click', () => {
+            // Restablecer los valores de los filtros
+                document.getElementById('min-price').value = '';
+                document.getElementById('max-price').value = '';
+                document.getElementById('sort-order').value = 'price-asc'; // Valor predeterminado
+                document.getElementById('buscador').value = ''; // Limpiar el campo de búsqueda
+
+            // Mostrar todos los productos sin filtros
+                mostrarProductos(productos);
+              });
+            })
+            
           .catch(error => console.log('error', error));
     
       function mostrarProductos(listaProductos) {

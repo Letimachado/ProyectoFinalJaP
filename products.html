@@ -36,37 +36,51 @@
 
 <!-- fin del navbar -->
    
-    
-    <!-- Filtros y Ordenamiento -->
+<!-- Filtros y Ordenamiento -->
+<div class="container my-4">
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <!-- Buscador y Filtros en el mismo div -->
+      <div class="filters-container">
+        <h5 class="filter-heading">Buscador de productos</h5>
+        
+        <!-- Buscador -->
+        <div class="search-container mb-4">
+          <input type="search" id="buscador" class="form-control" placeholder="Buscar productos...">
+        </div>
 
-    <h5>Buscador de productos</h5>
-    <input type="search" id="buscador" placeholder="Buscar...">
-
-    <div class="row mb-4">
-      <div class="col-md-4">
-        <h5>Filtrar por precio</h5>
-        <form id="filter-form">
-          <div class="form-group">
-            <label for="min-price">Precio Mínimo:</label>
-            <input type="number" id="min-price" class="form-control" placeholder="0">
+        <!-- Filtros y Ordenamiento -->
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <h5 class="filter-heading">Filtrar por precio</h5>
+            <form id="filter-form" class="filter-form">
+              <div class="form-group mb-3">
+                <label for="min-price" class="form-label">Precio Mínimo:</label>
+                <input type="number" id="min-price" class="form-control" placeholder="0">
+              </div>
+              <div class="form-group mb-3">
+                <label for="max-price" class="form-label">Precio Máximo:</label>
+                <input type="number" id="max-price" class="form-control" placeholder="10000">
+              </div>
+              <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-primary btn-filter">Aplicar Filtros</button>
+                <button type="button" id="reset-filters" class="btn btn-secondary btn-filter">Eliminar Filtros</button>
+              </div>
+            </form>
           </div>
-          <div class="form-group">
-            <label for="max-price">Precio Máximo:</label>
-            <input type="number" id="max-price" class="form-control" placeholder="10000">
-          </div>
-          <button type="submit" class="btn btn-primary mt-2">Aplicar Filtros</button>
-        </form>
-      </div>
 
-      <div class="col-md-4">
-        <h5>Ordenar por</h5>
-        <select id="sort-order" class="form-control">
-          <option value="price-asc">Precio: Bajo a Alto</option>
-          <option value="price-desc">Precio: Alto a Bajo</option>
-          <option value="relevance-desc">Relevancia: Mayor a Menor</option>
-        </select>
+          <div class="col-md-4 mb-4">
+            <h5 class="filter-heading">Ordenar por</h5>
+            <select id="sort-order" class="form-select">
+              <option value="price-asc">Precio: Bajo a Alto</option>
+              <option value="price-desc">Precio: Alto a Bajo</option>
+              <option value="relevance-desc">Relevancia: Mayor a Menor</option>
+            </select>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
 
     <!-- Productos -->
     <div class="row" id="product-list">
