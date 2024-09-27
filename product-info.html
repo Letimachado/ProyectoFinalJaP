@@ -61,8 +61,27 @@
       <!-- Sección de imágenes relacionadas o adicionales -->
       <h3>Imágenes Relacionadas</h3>
       <div class="related-images" id="related-images"></div>
+
+      <div class="rating">
+        <h3>Califica este producto</h3>
+        <div class="star-rating" id="star-rating">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+        </div>
+        <input type="hidden" id="rating-value" name="rating">
+        <div class="form-group">
+            <label for="comments">Comentarios:</label>
+            <textarea id="comments" class="form-control" rows="4" placeholder="Escribe tu comentario aquí..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" id="submit-rating">Enviar</button>
+    </div>
   </div>
     </div>
+
+
   </main>
   <footer class="text-muted">
     <div class="container">

@@ -57,3 +57,37 @@ function toggleLoader(show) {
         productContainer.style.display = 'block';
     }
 }
+
+const stars = document.querySelectorAll('.star');
+const ratingValue = document.getElementById('rating-value');
+
+stars.forEach(star => {
+    star.addEventListener('mouseover', () => {
+        const value = star.getAttribute('data-value');
+        highlightStars(value);
+    });
+
+    star.addEventListener('mouseout', () => {
+        const selectedValue = ratingValue.value;
+        highlightStars(selectedValue);
+    });
+
+    star.addEventListener('click', () => {
+        ratingValue.value = star.getAttribute('data-value');
+        highlightStars(ratingValue.value);
+    });
+});
+
+function highlightStars(value) {
+    stars.forEach(star => {
+        star.classList.remove('hover', 'selected');
+        if (star.getAttribute('data-value') <= value) {
+            star.classList.add('hover');
+        }
+    });
+    if (value) {
+        for (let i = 0; i < value; i++) {
+            stars[i].classList.add('selected');
+        }
+    }
+}

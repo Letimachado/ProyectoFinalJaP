@@ -442,3 +442,34 @@ h3 {
   font-size: 0.75rem; /* Tamaño de fuente reducido */
   padding: 0.25rem; /* Padding reducido */
 }
+
+/*Estilo de las estrellas*/
+.star-rating {
+  display: flex;
+  cursor: pointer;
+  margin-bottom: 15px; /* Espacio entre las estrellas y los comentarios */
+}
+
+.star {
+  font-size: 30px;
+  color: lightgray; /* Color por defecto */
+  transition: color 0.2s;
+}
+
+.star.hover, .star.selected {
+  color: gold; /* Color de la estrella seleccionada */
+}
+
+.rating {
+  width: 100%; /* Asegura que el div de calificación ocupe todo el ancho */
+  padding: 15px; /* Puedes ajustar el padding como desees */
+  box-sizing: border-box; /* Incluye el padding en el ancho total */
+  background-color: #f8f9fa; /* Fondo opcional */
+  border: 1px solid #ddd; /* Borde opcional */
+  border-radius: 5px; /* Bordes redondeados opcionales */
+  margin-top: 30px; /* Espacio entre la sección de imágenes y la de calificación */
+}
+
+#submit-rating {
+  margin-top: 15px; /* Ajusta el espacio según tus preferencias */
+}
