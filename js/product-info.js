@@ -11,6 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => console.log('error', error));
  
+    fetch(`https://japceibal.github.io/emercado-api/products_comments/${idProducto}.json`)
+    .then(response => response.json())
+    .then(comentarios => {
+        loadProductComments(comentarios); // Función para cargar comentarios
+    })
+    .catch(error => console.log('error', error));
+
+
 })
 
 async function loadProductInfo(product) { 
@@ -44,6 +52,45 @@ async function loadProductInfo(product) {
         }
        
 
+}
+
+// Función para mostrar los comentarios
+function loadProductComments(comments) {
+    const commentsContainer = document.getElementById('comments-container'); // Asegúrate de tener este contenedor en tu HTML
+    
+    comments.forEach(comment => {
+        const commentElement = document.createElement('div');
+        commentElement.classList.add('comment');
+
+        // Plantilla básica de cómo podría ser un comentario
+        commentElement.innerHTML = `
+            <div class="comment-header">
+                <strong>${comment.user}</strong> ${generateStarRating(comment.score)} 
+            </div>
+            <div class="comment-body m-3">
+                <span>${comment.description}</span>
+            </div>
+            <div class="comment-rating">
+                <span class="text-secondary">${comment.dateTime}</span>
+            </div>
+            <hr>
+        `;
+
+        commentsContainer.appendChild(commentElement);
+    });
+}
+
+// Función para generar estrellas en base al puntaje
+function generateStarRating(score) {
+    let starsHTML = '';
+    for (let i = 1; i <= 5; i++) {
+        if (i <= score) {
+            starsHTML += '<span class="star selected">★</span>'; // Estrella llena
+        } else {
+            starsHTML += '<span class="star">☆</span>'; // Estrella vacía
+        }
+    }
+    return starsHTML;
 }
 
 function toggleLoader(show) {
