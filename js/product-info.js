@@ -141,6 +141,11 @@ function toggleLoader(show) {
 
 const stars = document.querySelectorAll('.star');
 const ratingValue = document.getElementById('rating-value');
+const submitButton = document.getElementById('submit-rating');
+const ratingsList = document.getElementById('ratings-list');
+
+// Recuperar el email del localStorage
+const userEmail = localStorage.getItem('email');
 
 stars.forEach(star => {
     star.addEventListener('mouseover', () => {
@@ -171,4 +176,35 @@ function highlightStars(value) {
             stars[i].classList.add('selected');
         }
     }
+}
+
+submitButton.addEventListener('click', (e) => {
+    e.preventDefault(); // Evita el envío del formulario
+
+    const rating = ratingValue.value;
+    const comment = document.getElementById('comments').value;
+
+    if (rating && userEmail) {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `
+            <strong>${userEmail}</strong>: ${createStars(rating)}<br>
+            <span>${comment}</span>
+        `;
+        ratingsList.appendChild(listItem);
+
+        // Limpiar campos
+        document.getElementById('comments').value = '';
+        ratingValue.value = '';
+        highlightStars(0); // Reinicia la visualización de estrellas
+    } else {
+        alert('Por favor, selecciona una calificación y asegúrate de haber iniciado sesión.');
+    }
+});
+
+function createStars(value) {
+    let starsHTML = '';
+    for (let i = 1; i <= 5; i++) {
+        starsHTML += `<span class="gold-star">${i <= value ? '&#9733;' : '&#9734;'}</span>`;
+    }
+    return starsHTML;
 }
