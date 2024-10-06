@@ -71,7 +71,9 @@ function loadRelatedProducts(relatedProducts) {
             <p>${product.name}</p>
         `;
         productElement.addEventListener('click', () => {
-            loadProductInfoById(product.id);
+            // Guardar el ID del producto en localStorage y recargar la página
+            localStorage.setItem('prodId', product.id);
+            window.location.reload(); // Recargar la página para mostrar el nuevo producto
         });
         relatedProductsContainer.appendChild(productElement);
     });
