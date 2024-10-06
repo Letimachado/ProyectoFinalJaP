@@ -1,20 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
      
     const idProducto = localStorage.getItem('prodId');
+   
     fetch(`https://japceibal.github.io/emercado-api/products/${idProducto}.json`) 
         .then(response => response.json())
         .then(datos => {
             producto = datos; // Guardar los productos en la variable
             loadProductInfo(producto);
-            
-
         })
         .catch(error => console.log('error', error));
  
     fetch(`https://japceibal.github.io/emercado-api/products_comments/${idProducto}.json`)
-    .then(response => response.json())
-    .then(comentarios => {
-        loadProductComments(comentarios); // Función para cargar comentarios
+        .then(response => response.json())
+        .then(comentarios => {
+            loadProductComments(comentarios); // Función para cargar comentarios
     })
     .catch(error => console.log('error', error));
 
@@ -92,13 +91,11 @@ function loadProductInfoById(productId) {
 
 // Función para mostrar los comentarios
 function loadProductComments(comments) {
-    const commentsContainer = document.getElementById('comments-container'); // Asegúrate de tener este contenedor en tu HTML
+    const commentsContainer = document.getElementById('comments-container');
     
     comments.forEach(comment => {
         const commentElement = document.createElement('div');
         commentElement.classList.add('comment');
-
-        // Plantilla básica de cómo podría ser un comentario
         commentElement.innerHTML = `
             <div class="comment-header">
                 <strong>${comment.user}</strong> ${generateStarRating(comment.score)} 
@@ -109,8 +106,7 @@ function loadProductComments(comments) {
             <div class="comment-rating">
                 <span class="text-secondary">${comment.dateTime}</span>
             </div>
-            <hr>
-        `;
+            <hr>`;
 
         commentsContainer.appendChild(commentElement);
     });
