@@ -492,3 +492,9 @@ h3 {
   object-fit: cover;
   margin-bottom: 10px;
 }
+
+.gold-star {
+  color: gold; /* Cambia el color de las estrellas a dorado */
+  font-size: 30px; /* Ajusta el tamaño según tus preferencias */
+  display: inline-block; /* Asegura que las estrellas se alineen horizontalmente */
+}
