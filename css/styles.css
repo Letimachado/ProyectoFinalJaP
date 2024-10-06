@@ -252,6 +252,7 @@ h3 {
   gap: 10px;
   flex-wrap: wrap;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .related-images img {
@@ -472,4 +473,22 @@ h3 {
 
 #submit-rating {
   margin-top: 15px; /* Ajusta el espacio según tus preferencias */
+}
+
+/* Ajusta las proporciones de los productos relacionados */
+.related-products {
+  display: flex;
+  gap: 10px;
+}
+
+.related-product {
+  cursor: pointer;
+  text-align: center;
+}
+
+.related-product img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 10px;
 }
