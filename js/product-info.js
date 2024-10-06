@@ -43,6 +43,10 @@ async function loadProductInfo(product) {
                     relatedImagesContainer.appendChild(img);
                 }
             });
+            
+            // Cargar productos relacionados
+            loadRelatedProducts(product.relatedProducts);
+
             toggleLoader(false); 
             
         } else {
@@ -51,6 +55,36 @@ async function loadProductInfo(product) {
         }
        
 
+}
+
+// Función para mostrar los productos relacionados
+function loadRelatedProducts(relatedProducts) {
+    const relatedProductsContainer = document.getElementById('related-products');
+    relatedProductsContainer.innerHTML = '';
+
+
+    relatedProducts.forEach(product => {
+        const productElement = document.createElement('div');
+        productElement.className = 'related-product';
+        productElement.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <p>${product.name}</p>
+        `;
+        productElement.addEventListener('click', () => {
+            loadProductInfoById(product.id);
+        });
+        relatedProductsContainer.appendChild(productElement);
+    });
+}
+
+
+function loadProductInfoById(productId) {
+    fetch(`https://japceibal.github.io/emercado-api/products/${productId}.json`)
+        .then(response => response.json())
+        .then(datos => {
+            loadProductInfo(datos);
+        })
+        .catch(error => console.log('error', error));
 }
 
 // Función para mostrar los comentarios
@@ -103,6 +137,11 @@ function toggleLoader(show) {
 
 const stars = document.querySelectorAll('.star');
 const ratingValue = document.getElementById('rating-value');
+const submitButton = document.getElementById('submit-rating');
+const ratingsList = document.getElementById('ratings-list');
+
+// Recuperar el email del localStorage
+const userEmail = localStorage.getItem('email');
 
 stars.forEach(star => {
     star.addEventListener('mouseover', () => {
@@ -134,3 +173,35 @@ function highlightStars(value) {
         }
     }
 }
+
+submitButton.addEventListener('click', (e) => {
+    e.preventDefault(); // Evita el envío del formulario
+
+    const rating = ratingValue.value;
+    const comment = document.getElementById('comments').value;
+
+    if (rating && userEmail) {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `
+            <strong>${userEmail}</strong>: ${createStars(rating)}<br>
+            <span>${comment}</span>
+        `;
+        ratingsList.appendChild(listItem);
+
+        // Limpiar campos
+        document.getElementById('comments').value = '';
+        ratingValue.value = '';
+        highlightStars(0); // Reinicia la visualización de estrellas
+    } else {
+        alert('Por favor, selecciona una calificación y asegúrate de haber iniciado sesión.');
+    }
+});
+
+function createStars(value) {
+    let starsHTML = '';
+    for (let i = 1; i <= 5; i++) {
+        starsHTML += `<span class="gold-star">${i <= value ? '&#9733;' : '&#9734;'}</span>`;
+    }
+    return starsHTML;
+}
+
