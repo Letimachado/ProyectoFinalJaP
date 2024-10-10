@@ -62,3 +62,34 @@ let getJSONData = function(url){
          }
      }
  }
+
+ const themeToggleButton = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Función para cambiar el tema
+function setTheme(theme) {
+  if (theme === 'dark') {
+    body.classList.add('dark-theme');
+    themeToggleButton.textContent = 'Cambiar a Tema Claro';
+  } else {
+    body.classList.remove('dark-theme');
+    themeToggleButton.textContent = 'Cambiar a Tema Oscuro';
+  }
+}
+
+// Verificar si hay un tema guardado en localStorage
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+  setTheme(savedTheme);
+}
+
+// Alternar tema al hacer clic en el botón
+themeToggleButton.addEventListener('click', () => {
+  if (body.classList.contains('dark-theme')) {
+    setTheme('light');
+    localStorage.setItem('theme', 'light');
+  } else {
+    setTheme('dark');
+    localStorage.setItem('theme', 'dark');
+  }
+});
