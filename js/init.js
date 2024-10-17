@@ -70,10 +70,10 @@ const body = document.body;
 function setTheme(theme) {
   if (theme === 'dark') {
     body.classList.add('dark-theme');
-    themeToggleButton.textContent = 'Cambiar a Tema Claro';
+    themeToggleButton.textContent = '☀';
   } else {
     body.classList.remove('dark-theme');
-    themeToggleButton.textContent = 'Cambiar a Tema Oscuro';
+    themeToggleButton.textContent = '🌙';
   }
 }
 
