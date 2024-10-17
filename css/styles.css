@@ -513,6 +513,11 @@ h3 {
   --container-background: #1a1a1a;
 }
 
+.dark-theme .product-info h2,
+.dark-theme .product-info p {
+  color: white; /* Texto blanco para la información del producto */
+}
+
 body {
   background-color: var(--background-color);
   color: var(--text-color);
@@ -614,3 +619,4 @@ button:hover {
   font-size: 30px;
   display: inline-block;
 }
+
