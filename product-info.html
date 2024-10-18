@@ -31,6 +31,12 @@
         </svg>
         <span id="userEmail">Usuario</span>
       </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li><a class="dropdown-item" href="my-profile.html">Mi Perfil</a></li>
+        <li><a class="dropdown-item" href="cart.html" id="miCarrito">Mi Carrito</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="login.html" id="logout">Cerrar sesión</a></li>
+      </ul>
     </li>
   </ul>
 </header>
@@ -84,6 +90,11 @@
         <button type="submit" class="btn btn-primary" id="submit-rating">Enviar</button>
     </div>
     <div id="comments-container"></div>
+    <div style="margin-top: 20px;">
+      <h4>Calificaciones enviadas:</h4>
+  </div>
+  <ul id="ratings-list"></ul>
+
 
     <div style="margin-top: 20px;">
       <h4>Calificaciones enviadas:</h4>

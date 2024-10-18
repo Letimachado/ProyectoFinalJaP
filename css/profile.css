@@ -1,0 +1,68 @@
+/* Estilos para profile.html */
+
+/* General */
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    color: #343a40;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  /* Estilo del input de archivo y botón */
+  input[type="file"] {
+    display: block;
+    margin: 1rem auto;
+    border: 1px solid #ced4da;
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+  }
+  
+  button {
+    background-color: #ff8c00;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: .25rem;
+    margin-top: 1rem;
+  }
+  
+  button:hover {
+    background-color: #e07b00;
+  }
+  
+  /* Estilos de la imagen de perfil */
+  #profilePicture {
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  /* Alerta */
+  .alert {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  

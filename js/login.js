@@ -14,3 +14,17 @@ const login = document.getElementById('formularioLogin'); //Creamos un espacio d
     window.location.href = 'index.html';                                        //Redirige al usuario al inicio
 });
 
+const logout = document.getElementById('logout'); // Seleccionamos el botón/enlace de "Cerrar sesión"
+
+logout.addEventListener('click', function(e) {
+    e.preventDefault();  // Evitamos que el enlace redirija inmediatamente
+
+    // Eliminamos los datos almacenados en localStorage
+    localStorage.removeItem('email');
+    localStorage.removeItem('password');
+    localStorage.removeItem('UsuarioRegistrado');
+
+    alert('Sesión cerrada correctamente');  // Alerta para indicar que la sesión se cerró
+
+    window.location.href = 'login.html';  // Redirigimos al usuario a la página de login
+});
