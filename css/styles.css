@@ -200,7 +200,7 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 20px;
   background-color: white;
@@ -308,6 +308,10 @@ h3 {
 /* Ocultar inicialmente el contenedor del producto */
 #product-container {
   display: none;
+  max-width: 1300px; /* Ajusta el ancho */
+  margin: 0 auto; /* Esto centra el contenedor horizontalmente */
+  padding: 20px; /* Espaciado interno */
+  margin-top: 20px;
 }
 
 /* Media Queries para pantallas medianas (Tablets y pequeños monitores) */
@@ -514,8 +518,26 @@ h3 {
 }
 
 .dark-theme .product-info h2,
-.dark-theme .product-info p {
+.dark-theme .product-info p,
+.dark-theme .fs-4,
+.dark-theme .filter-heading,
+.dark-theme .form-label,
+.dark-theme .col,
+.dark-theme .btn.btn-light.btn-lg.btn-block{
   color: white; /* Texto blanco para la información del producto */
+}
+
+
+.dark-theme #autos, 
+.dark-theme #juguetes,
+.dark-theme #muebles,
+.dark-theme .card-body,
+.dark-theme .col-md-4,
+.dark-theme .filters-container,
+.dark-theme .list-group-item,
+.dark-theme .btn.btn-light.btn-lg.btn-block
+{
+  background-color: #292929;
 }
 
 body {
@@ -526,10 +548,9 @@ body {
 
 .container {
   background-color: var(--container-background);
-  padding: 20px;
-  margin: 20px;
   border-radius: 8px;
   transition: background-color 0.3s;
+  margin-top: 15px;
 }
 
 button {
@@ -620,3 +641,10 @@ button:hover {
   display: inline-block;
 }
 
+.col-md-4.mb-4{
+  margin-left: 55px;
+}
+
+.list-group-item{
+  margin-top: 25px;
+}
