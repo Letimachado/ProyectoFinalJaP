@@ -1,3 +1,13 @@
+const NavPicture = document.getElementById("profilePictureNav");
+const savedImage = localStorage.getItem("profilePicture");
+if (savedImage) {
+  NavPicture.src = savedImage;
+}
+logout.addEventListener("click", function() {
+    localStorage.clear()
+  });
+
+
 const ORDER_ASC_BY_NAME = "AZ";
 const ORDER_DESC_BY_NAME = "ZA";
 const ORDER_BY_PROD_COUNT = "Cant.";

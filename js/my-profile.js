@@ -3,12 +3,16 @@ document.addEventListener("DOMContentLoaded", function() {
   const fileInput = document.getElementById("fileInput");
   const saveButton = document.getElementById("saveButton");
   const saveDataButton = document.getElementById("saveData");
+  const NavPicture = document.getElementById("profilePictureNav");
 
   // Cargar la imagen de perfil desde localStorage si existe
   const savedImage = localStorage.getItem("profilePicture");
   if (savedImage) {
     profilePicture.src = savedImage;
+    NavPicture.src = savedImage;
   }
+
+   
 
   // Control sobre la carga de la imagen
   fileInput.addEventListener("change", function(event) {
@@ -17,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     reader.onload = function(e) {
       profilePicture.src = e.target.result;
+      NavPicture.src = e.target.result;
     }
     
     if (file) {
@@ -73,6 +78,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     //Datos guardados
     alert("Datos guardados correctamente.");
+  });
+
+  logout.addEventListener("click", function() {
+    localStorage.clear()
   });
 });
 

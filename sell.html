@@ -13,30 +13,29 @@
 
 <body>
 <!-- inicio del navbar -->
-<header class="d-flex flex-wrap justify-content-center py-3 border-bottom">
+<nav class="d-flex flex-wrap justify-content-center py-3 border-bottom">
   <a href="index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
     <span class="fs-4" style="padding-left: 20px;">eMercado</span>
   </a>
-  <button id="theme-toggle">Cambiar a Tema Oscuro</button>
+  <button class="modos" id="theme-toggle">Tema</button>
   <ul class="nav nav-pills">
     <li class="nav-item"><a href="categories.html" class="nav-link" style="color: orange;">Categorías</a></li>
     <li class="nav-item"><a href="sell.html" class="nav-link" style="color: orange;">Vender</a></li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: orange;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-          <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"></path>
-        </svg>
-        <span id="userEmail">Usuario</span>
-      </a>
-      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <li><a class="dropdown-item" href="my-profile.html">Mi Perfil</a></li>
-        <li><a class="dropdown-item" href="cart.html" id="miCarrito">Mi Carrito</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="login.html" id="logout">Cerrar sesión</a></li>
-      </ul>
+      <div class="dropdown text-end mx-2">
+        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="https://cdn-icons-png.flaticon.com/512/6097/6097908.png" alt="mdo" width="32" height="32" class="rounded-circle" id="profilePictureNav">
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="my-profile.html">Mi Perfil</a></li>
+          <li><a class="dropdown-item" href="cart.html" id="miCarrito">Mi Carrito</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="login.html" id="logout">Cerrar sesión</a></li>
+        </ul>
+      </div>
     </li>
   </ul>
-  </header> 
+</nav>
 <!-- fin del navbar -->
   <div class="container">
     <div class="text-center p-4">

@@ -1,5 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
      
+    const NavPicture = document.getElementById("profilePictureNav");
+    const savedImage = localStorage.getItem("profilePicture");
+    if (savedImage) {
+      NavPicture.src = savedImage;
+    }
+    logout.addEventListener("click", function() {
+        localStorage.clear()
+      });
     const idProducto = localStorage.getItem('prodId');
    
     fetch(`https://japceibal.github.io/emercado-api/products/${idProducto}.json`) 

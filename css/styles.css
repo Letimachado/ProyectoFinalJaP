@@ -32,7 +32,7 @@ nav a {
   height: 50vh;
   padding: 5em inherit;
   margin-bottom: 0;
-  background-color: #53C0FB;
+
   background: url('../img/cover_back.png');
   background-size: cover;
   background-position: center;
@@ -78,7 +78,7 @@ footer p {
 }
 
 .site-header a {
-  color: white;
+
   transition: ease-in-out color .15s;
 }
 
@@ -89,7 +89,7 @@ footer p {
 .dropzone {
   border: 2px dashed #0087F7;
   border-radius: 5px;
-  background: white;
+
 }
 
 .img-fit {
@@ -196,14 +196,12 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
 }
 
 .container {
   max-width: 1300px;
   margin: 0 auto;
   padding: 20px;
-  background-color: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
@@ -647,4 +645,13 @@ button:hover {
 
 .list-group-item{
   margin-top: 25px;
+}
+
+.modos{
+  background-color: #ff8c00;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: .25rem;
 }

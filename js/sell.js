@@ -1,3 +1,12 @@
+const NavPicture = document.getElementById("profilePictureNav");
+const savedImage = localStorage.getItem("profilePicture");
+if (savedImage) {
+  NavPicture.src = savedImage;
+}
+logout.addEventListener("click", function() {
+    localStorage.clear()
+});
+
 let productCost = 0;
 let productCount = 0;
 let comissionPercentage = 0.13;
