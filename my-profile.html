@@ -19,11 +19,7 @@
       user-select: none;
     }
 
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
+
   </style>
 </head>
 
@@ -56,16 +52,38 @@
   </header>
 <!-- fin del navbar -->
   
-  <main>
     <div class="container">
       <h1>Perfil de Usuario</h1>
-      <div>
+      <div class="mb-5">
         <img id="profilePicture" src="https://cdn-icons-png.flaticon.com/512/6097/6097908.png"alt="Foto de Perfil" width="150">
-        <input type="file" id="fileInput">
-        <button id="saveButton">Guardar Foto</button>
       </div>
+    
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Primer Nombre" aria-label="Nombre" aria-describedby="basic-addon1" id="username">
+      </div>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Segundo Nombre" aria-label="SegundoNombre" aria-describedby="basic-addon1" id="usersecondname">
+      </div>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" aria-describedby="basic-addon1" id="userapellido">
+      </div>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Segundo Apellido" aria-label="SegundoApellido" aria-describedby="basic-addon1" id="usersecondap">
+      </div>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" id="useremail">
+      </div>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Teléfono" aria-label="Nombre" aria-describedby="basic-addon1" id="usertel">
+      </div>    
+      <div class="input-group">
+        <input type="file" class="form-control mb-0 mt-0" id="fileInput">
+        <label class="input-group-text m-0" for="fileInput" id="saveButton">Guardar</label>
+      </div>
+      <button type="button" class="btn btn-light" id="saveData">Guardar datos</button>
     </div>
-  </main>
+
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
