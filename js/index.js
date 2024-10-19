@@ -12,6 +12,15 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem("catID", 103);
         window.location = "products.html";
     });
+    //Carga la imágen de perfil en el navbar
+    const NavPicture = document.getElementById("profilePictureNav");
+    const savedImage = localStorage.getItem("profilePicture");
+    if (savedImage) {
+      NavPicture.src = savedImage;
+    }
+    logout.addEventListener("click", function() {
+        localStorage.clear()
+      });
 
 });
 

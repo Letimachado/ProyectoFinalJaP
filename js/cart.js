@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
+
+    const NavPicture = document.getElementById("profilePictureNav");
+    const savedImage = localStorage.getItem("profilePicture");
+        if (savedImage) {
+        NavPicture.src = savedImage;
+        }
+    logout.addEventListener("click", function() {
+    localStorage.clear()
+    });
+
     //const userId = localStorage.getItem('userId');  Asumiendo que guardas el USER_ID en localStorage
     const userId = 1;
     if (userId) {

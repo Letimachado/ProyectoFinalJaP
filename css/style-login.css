@@ -86,7 +86,14 @@
       max-width: 100%;
       max-height: 100%;
      }
-     
+     .modos{
+      background-color: #ff8c00;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        border-radius: .25rem;
+    }
      
    
 

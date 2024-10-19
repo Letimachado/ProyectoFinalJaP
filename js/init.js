@@ -40,15 +40,15 @@ let getJSONData = function(url){
     });
 }
 
- // Verificación de sesión de usuario
- const loginExitoso = localStorage.getItem('UsuarioRegistrado');
+document.addEventListener('DOMContentLoaded', function() {
+  const loginExitoso = localStorage.getItem('UsuarioRegistrado') === 'true'; // Verificamos el estado de 'UsuarioRegistrado'
+  
+  if (!loginExitoso) {
+      window.location.href = 'login.html'; // Redirigimos al login si no está registrado
+  }
 
 
- if (!loginExitoso) {
-     window.location.href = 'login.html'; // Redirige a la página de inicio de sesión si no hay sesión
- } else {
-     console.log("El usuario ya está registrado");
-
+ 
 
      // Mostrar el correo del usuario en el header
      const userEmailElement = document.getElementById('userEmail'); // Obtén el elemento donde se mostrará el correo
@@ -61,7 +61,7 @@ let getJSONData = function(url){
              userEmailElement.textContent = 'Usuario'; // Muestra un texto por defecto si no hay correo
          }
      }
- }
+ 
 
  const themeToggleButton = document.getElementById('theme-toggle');
 const body = document.body;
@@ -70,10 +70,10 @@ const body = document.body;
 function setTheme(theme) {
   if (theme === 'dark') {
     body.classList.add('dark-theme');
-    themeToggleButton.textContent = '☀';
+    themeToggleButton.textContent = '☼';
   } else {
     body.classList.remove('dark-theme');
-    themeToggleButton.textContent = '🌙';
+    themeToggleButton.textContent = '☾';
   }
 }
 
@@ -92,4 +92,6 @@ themeToggleButton.addEventListener('click', () => {
     setTheme('dark');
     localStorage.setItem('theme', 'dark');
   }
+});
+
 });
