@@ -16,16 +16,14 @@
  <!-- inicio del navbar -->
  <header class="d-flex flex-wrap justify-content-center py-3 border-bottom">
   <a href="index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-    <span class="fs-4" style="padding-left: 20px;" id="eMercado">eMercado</span>
+    <span class="fs-4" style="padding-left: 20px;">eMercado</span>
   </a>
-
-   <button id="theme-toggle">Cambiar a Tema Oscuro</button>
-
+  <button id="theme-toggle">Cambiar a Tema Oscuro</button>
   <ul class="nav nav-pills">
     <li class="nav-item"><a href="categories.html" class="nav-link" style="color: orange;">Categorías</a></li>
     <li class="nav-item"><a href="sell.html" class="nav-link" style="color: orange;">Vender</a></li>
-    <li class="nav-item">
-      <a href="login.html" class="nav-link" style="color: orange;">
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: orange;">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
           <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"></path>
         </svg>
@@ -39,8 +37,7 @@
       </ul>
     </li>
   </ul>
-</header>
-
+  </header>
 <!-- fin del navbar -->
   <main>
     <div id="loader" class="loader">
