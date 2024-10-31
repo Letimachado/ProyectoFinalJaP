@@ -183,7 +183,7 @@ function highlightStars(value) {
         }
     }
 }
-function comprarProducto() {
+function agregarAlCarrito() {
     // Obtener la información del producto
     const producto = {
         id: localStorage.getItem('prodId'), // Usa el ID guardado en localStorage
