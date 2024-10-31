@@ -183,3 +183,22 @@ function highlightStars(value) {
         }
     }
 }
+function agregarAlCarrito() {
+    // Obtener la información del producto
+    const producto = {
+        id: localStorage.getItem('prodId'), // Usa el ID guardado en localStorage
+        nombre: document.getElementById('product-name').innerText,
+        descripcion: document.getElementById('product-description').innerText,
+        categoria: document.getElementById('product-category').innerText,
+        vendidos: document.getElementById('product-sold').innerText,
+        precio: document.getElementById('product-cost').innerText,
+        moneda: document.getElementById('product-currency').innerText,
+        cantidad: 1 // Establece la cantidad inicial en 1
+    };
+
+    // Guardar el producto en el localStorage bajo una clave específica
+    localStorage.setItem('productoSeleccionado', JSON.stringify(producto));
+
+    // Navegar a la pantalla de carrito
+    window.location.href = "cart.html";
+}
