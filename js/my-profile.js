@@ -66,12 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
       alert("Los campos Nombre, Apellido y Email son obligatorios.");
       return; 
     }
-     
-    function getId(min, max) {
-      min = Math.ceil(min);
-      max = Math.floor(max);
-      return Math.floor(Math.random() * (max - min) + min);
-    }
+
 
     // Guardamos los datos en el localstorage
     localStorage.setItem("nombre", nombre);
@@ -80,7 +75,6 @@ document.addEventListener("DOMContentLoaded", function() {
     localStorage.setItem("segundoApellido", segundoApellido);
     localStorage.setItem("email", email);
     localStorage.setItem("telefono", telefono);
-    localStorage.setItem("userId", getId(1, 500));
 
     //Datos guardados
     alert("Datos guardados correctamente.");
