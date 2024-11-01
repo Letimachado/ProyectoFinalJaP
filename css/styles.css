@@ -655,3 +655,12 @@ button:hover {
     cursor: pointer;
     border-radius: .25rem;
 }
+
+.badge {
+  background-color: #ff8c00;
+  color: white;
+  border-radius: 50%;
+  padding: 0.2em 0.5em;
+  font-size: 0.8em;
+  margin-left: 5px;
+}

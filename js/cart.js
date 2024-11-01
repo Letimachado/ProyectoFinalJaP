@@ -1,18 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
-
     const NavPicture = document.getElementById("profilePictureNav");
     const savedImage = localStorage.getItem("profilePicture");
-        if (savedImage) {
+    if (savedImage) {
         NavPicture.src = savedImage;
-        }
+    }
+    
+    const logout = document.getElementById("logout");
     logout.addEventListener("click", function() {
-    localStorage.clear()
+        localStorage.clear();
     });
 
+    // Función para actualizar el badge del carrito en tiempo real
+    function actualizarBadgeCarrito() {
+        const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        const badge = document.getElementById("cart-badge");
+        badge.textContent = carrito.length; // Muestra la cantidad de productos
+    }
+
+    // Llama a la función para mostrar la cantidad al cargar la página
+    actualizarBadgeCarrito();
+
     // Obtiene el array de objetos "carrito", donde se encuentran los productos 
-    const carrito = JSON.parse(localStorage.getItem("carrito"));
-    // Si hay productos en el carrito ejecuta la función mostrarCarrito
-    if (carrito) {
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    if (carrito.length > 0) {
         function mostrarCarrito() {
             const carritoContainer = document.getElementById('carritoContainer');
             let html = '';
@@ -37,8 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>`;
             });
-    
-            // Muestra en pantalla el precio total del carrito
+            
             html += `
                 <div class="text-center mt-5">
                     <h4>Total: <span id="totalCarrito">${carrito[0].moneda}</span></h4>
@@ -63,27 +73,20 @@ document.addEventListener('DOMContentLoaded', function() {
     
             function actualizarTotal() {
                 let total = 0;
-    
                 carrito.forEach(producto => {
                     const cantidad = document.getElementById(`cantidadProducto-${producto.id}`).value;
                     const subtotal = cantidad * producto.precio;
                     total += subtotal;
                 });
-
                 document.getElementById('totalCarrito').textContent = `${carrito[0].moneda} ${total}`;
             }
     
-
             actualizarTotal();
         }
     
         mostrarCarrito();
     } else {
-        // En caso de que el carrito esté vacío, se muestra una alerta
         const carritoContainer = document.getElementById('carritoContainer');
-        let html = `<div class="alert alert-warning text-center">Tu carrito está vacío. Agrega productos para verlos aquí.</div>`;
-        carritoContainer.innerHTML = html;
+        carritoContainer.innerHTML = `<div class="alert alert-warning text-center">Tu carrito está vacío. Agrega productos para verlos aquí.</div>`;
     }
-    
-    
 });
