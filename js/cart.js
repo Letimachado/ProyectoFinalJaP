@@ -9,38 +9,27 @@ document.addEventListener('DOMContentLoaded', function() {
     localStorage.clear()
     });
 
-    //const userId = localStorage.getItem('userId');  Asumiendo que guardas el USER_ID en localStorage
-    const userId = 1;
-    if (userId) {
-        fetch(`https://https://japceibal.github.io/emercado-api/user_cart/${userId}.json`) // Reemplaza la URL con tu API real
-            .then(response => response.json())
-            .then(data => {
-                mostrarCarrito(data);
-            })
-            .catch(error => {
-                console.error('Error al cargar el carrito:', error);
-            });
-    } else {
-        alert('Debes iniciar sesión primero');
-        window.location.href = 'login.html';
-    }
-});
+const producto = JSON.parse(localStorage.getItem("productoSeleccionado"))
 
-function mostrarCarrito(data) {
-    const carritoContainer = document.getElementById('carritoContainer'); // Un contenedor en tu cart.html
+if (producto) {
+function mostrarCarrito() {
+    const carritoContainer = document.getElementById('carritoContainer'); // nos redirige al container cart.html
     let html = '';
 
-    data.articles.forEach(article => {
+     // Primero verificamos si el carrito ya tiene articulos
         html += `
         <div class="articulo">
-            <img src="${article.image}" alt="${article.name}">
-            <h3>${article.name}</h3>
-            <p>Cantidad: ${article.count}</p>
-            <p>Precio Unitario: ${article.unitCost} ${article.currency}</p>
-            <p>Total: ${article.count * article.unitCost} ${article.currency}</p>
+            <h3>${producto.nombre}</h3>
+            <p>Precio Unitario: ${producto.moneda} ${producto.precio}</p>
         </div>
         <hr>`;
-    });
-
-    carritoContainer.innerHTML = html;
+        carritoContainer.innerHTML = html;
 }
+mostrarCarrito();
+} else {
+    // En caso de que el carrito está vacío se muestra una alerta
+    html = `<div class="alert alert-warning text-center">Tu carrito está vacío. Agrega productos para verlos aquí.</div>`;
+    carritoContainer.innerHTML = html;
+  }  
+  
+});
