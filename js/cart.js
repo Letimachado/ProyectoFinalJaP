@@ -9,9 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
     localStorage.clear()
     });
 
+    // Obtiene el array de objetos "carrito", donde se encuentran los productos 
     const carrito = JSON.parse(localStorage.getItem("carrito"));
-
-    if (carrito && carrito.length > 0) {
+    // Si hay productos en el carrito ejecuta la función mostrarCarrito
+    if (carrito) {
         function mostrarCarrito() {
             const carritoContainer = document.getElementById('carritoContainer');
             let html = '';
@@ -37,10 +38,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>`;
             });
     
-            // Precio total
+            // Muestra en pantalla el precio total del carrito
             html += `
                 <div class="text-center mt-5">
-                    <h4>Total: <span id="totalCarrito">${carrito[0].moneda} 0.00</span></h4>
+                    <h4>Total: <span id="totalCarrito">${carrito[0].moneda}</span></h4>
                 </div>
             `;
     
@@ -57,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const cantidad = input.value;
                 const producto = carrito.find(p => p.id === idProducto);
                 const subtotal = cantidad * producto.precio;
-                document.getElementById(`subtotal-${idProducto}`).textContent = `${producto.moneda} ${subtotal.toFixed(2)}`;
+                document.getElementById(`subtotal-${idProducto}`).textContent = `${producto.moneda} ${subtotal}`;
             }
     
             function actualizarTotal() {
@@ -69,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     total += subtotal;
                 });
 
-                document.getElementById('totalCarrito').textContent = `${carrito[0].moneda} ${total.toFixed(2)}`;
+                document.getElementById('totalCarrito').textContent = `${carrito[0].moneda} ${total}`;
             }
     
 

@@ -188,23 +188,20 @@ function agregarAlCarrito() {
     const producto = {
         id: localStorage.getItem('prodId'), // Usa el ID guardado en localStorage
         nombre: document.getElementById('product-name').innerText,
-        //descripcion: document.getElementById('product-description').innerText,
-        // categoria: document.getElementById('product-category').innerText,
-        // vendidos: document.getElementById('product-sold').innerText,
         precio: document.getElementById('product-cost').innerText,
         moneda: document.getElementById('product-currency').innerText,
         imagen: document.getElementById('product-main-image').src
     };
 
-     // Obtener carrito
+     // Obtener el array de carrito
      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-     // Verificar producto
+     // Verificar si el producto ya se encuentra en el carrito
      const productoExistente = carrito.find(item => item.id === producto.id);
-    
      if (productoExistente) {
         alert("Este producto ya está en el carrito.");
     } else {
+    // En caso de que el producto no se encuentre en el carrito lo agrega al array carrito y lo guarda en el localstorage
         carrito.push(producto);
         localStorage.setItem('carrito', JSON.stringify(carrito));
     
