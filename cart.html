@@ -39,7 +39,126 @@
 <!-- fin del navbar -->
   <main>
     <div id="carritoContainer"></div>
-  </main>
+  
+  <div class="container">
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          Tipo de envío:
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="envio" id="flexRadioEnvio1">
+            <label class="form-check-label" for="flexRadioEnvio1">
+              Premium 2 a 5 días (15% extra)
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="envio" id="flexRadioEnvio2">
+            <label class="form-check-label" for="flexRadioEnvio2">
+              Express 5 a 8 días (7% extra)
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="envio" id="flexRadioEnvio3">
+            <label class="form-check-label" for="flexRadioEnvio3">
+              Standard 12 a 15 días (5% extra)
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Dirección de envío:
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <form class="row g-3 needs-validation" novalidate>
+            <div class="col-md-6">
+              <label for="validationCustom01" class="form-label">Departamento</label>
+              <input type="text" class="form-control" id="departamento" required>
+              <div class="invalid-feedback">
+                Por favor ingrese el departamento.
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="validationCustom02" class="form-label">Localidad</label>
+              <input type="text" class="form-control" id="localidad" required>
+              <div class="invalid-feedback">
+                Por favor ingrese la localidad.
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="validationCustom03" class="form-label">Calle</label>
+              <input type="text" class="form-control" id="calle" required>
+              <div class="invalid-feedback">
+                Por favor ingrese el nombre de la calle.
+              </div>
+            </div>
+                        
+            <div class="col-md-2">
+              <label for="validationCustom05" class="form-label">Numero de puerta</label>
+              <input type="text" class="form-control" id="puerta" required>
+              <div class="invalid-feedback">
+                Por favor ingrese el numero de puerta.
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="validationCustom06" class="form-label">Esquina</label>
+              <input type="text" class="form-control" id="esquina" required>
+              <div class="invalid-feedback">
+                Por favor ingrese la esquina.
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Forma de pago:
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="pago" id="flexRadioPago1">
+            <label class="form-check-label" for="flexRadioPago1">
+              Tarjeta de débito o crédito
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="pago" id="flexRadioPago2">
+            <label class="form-check-label" for="flexRadioPago2">
+              Transferencia bancaria
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="pago" id="flexRadioPago3">
+            <label class="form-check-label" for="flexRadioPago3">
+              Efectivo en redes de cobranza
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="text-center mt-5">
+  <h4>Total:</h4>
+  <div id="totalesPorMoneda"></div>
+  <button class="btn btn-success mt-3" id="finalizarCompra">Finalizar compra</button>
+</div>
+</main>
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
@@ -48,14 +167,28 @@
       <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
     </div>
   </footer>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+<!-- Modal de confirmación de compra -->
+<div class="modal fade" id="modalCompra" tabindex="-1" aria-labelledby="modalCompraLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalCompraLabel">Detalles de la compra</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Tipo de envío:</strong> <span id="detalleEnvio"></span></p>
+        <p><strong>Dirección:</strong> <span id="detalleDireccion"></span></p>
+        <p><strong>Método de pago:</strong> <span id="detallePago"></span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Confirmar compra</button>
+      </div>
     </div>
   </div>
+</div>
+ 
+
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
