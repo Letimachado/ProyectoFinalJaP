@@ -108,8 +108,14 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <div class="mb-3">
                                     <label for="cantidadProducto-${producto.id}" class="form-label">Cantidad</label>
                                     <input type="number" class="form-control cantidadProducto" id="cantidadProducto-${producto.id}" value="${producto.cantidad}" style="max-width: 50px;" data-id="${producto.id}">
+                                    <div class="subtotal-contenedor">
+                                    <p class="card-text">Subtotal: <span id="subtotal-${producto.id}">${producto.moneda} ${producto.precio * producto.cantidad}</span></p>
+                                    <button type="button" class="btn eliminarProducto" data-id="${producto.id}">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                    </div>
                                 </div>
-                                <p class="card-text">Subtotal: <span id="subtotal-${producto.id}">${producto.moneda} ${producto.precio * producto.cantidad}</span></p>
+                                
                             </div>
                         </div>
                     </div>
@@ -126,6 +132,26 @@ document.addEventListener('DOMContentLoaded', function() {
                     actualizarBadgeCarrito(); 
                 });
             });
+
+            // Evento para eliminar productos
+            document.querySelectorAll('.eliminarProducto').forEach(button => {
+            button.addEventListener('click', () => {
+                                const idProducto = button.dataset.id;
+                                eliminarProducto(idProducto);
+            })});
+
+            // Función para eliminar producto
+        function eliminarProducto(idProducto) {
+            // Filtrar el carrito para eliminar el producto correspondiente
+            carrito = carrito.filter(producto => producto.id !== idProducto);
+            // Guardar el carrito actualizado en localStorage
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+            // Actualizar la visualización del carrito
+            mostrarCarrito();
+            // Actualizar el badge del carrito y el total
+            actualizarBadgeCarrito();
+            actualizarTotal();
+        }
 
             function actualizarCantidadProducto(input) {
                 const idProducto = input.dataset.id;
