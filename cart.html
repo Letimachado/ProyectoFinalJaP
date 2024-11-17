@@ -153,8 +153,10 @@
   </div>
 </div>
 <div class="text-center mt-5">
-  <h4>Total:</h4>
+  <h4>Subtotal:</h4>
   <div id="totalesPorMoneda"></div>
+  <p id="costoEnvio"></p>
+  <p id="totalFinal"></p>
   <button class="btn btn-success mt-3" id="finalizarCompra">Finalizar compra</button>
 </div>
 </main>
@@ -167,6 +169,7 @@
       <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
     </div>
   </footer>
+
 <!-- Modal de confirmación de compra -->
 <div class="modal fade" id="modalCompra" tabindex="-1" aria-labelledby="modalCompraLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -182,11 +185,14 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Confirmar compra</button>
+        <button type="button" id="confirmarCompra" class="btn btn-primary">Confirmar compra</button>
       </div>
     </div>
   </div>
 </div>
+
+
+
  
 
   <script src="js/bootstrap.bundle.min.js"></script>

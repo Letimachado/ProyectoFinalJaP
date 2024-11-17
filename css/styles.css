@@ -621,6 +621,8 @@ button:hover {
   color: white;
 }
 
+
+
 /* Ajusta las proporciones de los productos relacionados */
 .related-products {
   display: flex;
@@ -630,6 +632,73 @@ button:hover {
 .related-product {
   cursor: pointer;
   text-align: center;
+}
+
+/* Estilo del acordeón en modo oscuro */
+.dark-theme .accordion {
+  background-color: #333; /* Fondo gris oscuro */
+  color: white; /* Texto blanco */
+  border: none; /* Eliminar bordes */
+}
+
+/* Botones del acordeón en modo oscuro */
+.dark-theme .accordion-button {
+  background-color: #444; /* Fondo gris oscuro */
+  color: white; /* Texto blanco */
+  border: none; /* Sin bordes */
+  transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+}
+
+.dark-theme .accordion-button:hover {
+  background-color: #555; /* Fondo ligeramente más claro al pasar el cursor */
+  color: white; /* Mantener texto blanco */
+}
+
+/* Cambiar icono del botón del acordeón */
+.dark-theme .accordion-button::after {
+  filter: brightness(0.8); /* Asegura que el icono combine con el tema oscuro */
+}
+
+/* Estilo del acordeón desplegado */
+.dark-theme .accordion-button:not(.collapsed) {
+  background-color: #555; /* Fondo más claro cuando está desplegado */
+  color: white; /* Texto blanco */
+}
+
+.dark-theme .accordion-body {
+  background-color: #292929; /* Fondo gris oscuro */
+  color: white; /* Texto blanco */
+  border: none; /* Sin bordes */
+}
+
+/* Estilo del modal en modo oscuro */
+.dark-theme .modal-content {
+  background-color: #292929; /* Fondo oscuro para el contenido del modal */
+  color: white; /* Texto blanco */
+  border-radius: 8px; /* Bordes redondeados si es necesario */
+  padding: 20px; /* Relleno para que no quede pegado al borde */
+}
+
+/* Estilos de los encabezados dentro del modal */
+.dark-theme .modal-header h5 {
+  color: white; /* Encabezado en blanco */
+}
+
+/* Estilo de los botones dentro del modal */
+.dark-theme .modal-footer .btn {
+  background-color: #444; /* Fondo oscuro para los botones */
+  color: white; /* Texto blanco */
+  border: none; /* Eliminar bordes */
+}
+
+/* Cambiar color de los botones al pasar el cursor */
+.dark-theme .modal-footer .btn:hover {
+  background-color: #555; /* Fondo ligeramente más claro al pasar el cursor */
+}
+
+/* Opcional: Cambiar el fondo del modal cuando se activa el modo oscuro */
+.dark-theme .modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro translúcido */
 }
 
 .related-product img {
@@ -699,3 +768,4 @@ button:hover {
 .eliminarProducto:hover {
   background-color: #c82333;
 }
+
