@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     const idProducto = localStorage.getItem('prodId');
    
-    fetch(`https://japceibal.github.io/emercado-api/products/${idProducto}.json`) 
+    fetch(`http://localhost:3000/products/${idProducto}`) 
         .then(response => response.json())
         .then(datos => {
             producto = datos; // Guardar los productos en la variable
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => console.log('error', error));
  
-    fetch(`https://japceibal.github.io/emercado-api/products_comments/${idProducto}.json`)
+    fetch(`http://localhost:3000/products_comments/${idProducto}`)
         .then(response => response.json())
         .then(comentarios => {
             loadProductComments(comentarios); // Función para cargar comentarios
@@ -89,7 +89,7 @@ function loadRelatedProducts(relatedProducts) {
 
 
 function loadProductInfoById(productId) {
-    fetch(`https://japceibal.github.io/emercado-api/products/${productId}.json`)
+    fetch(`http://localhost:3000/products/${productId}`)
         .then(response => response.json())
         .then(datos => {
             loadProductInfo(datos);

@@ -65,6 +65,8 @@ document.querySelectorAll('input[name="envio"]').forEach(radio => {
     });
 });
 
+
+
     //Cerrar sesión
     const logout = document.getElementById("logout");
     logout.addEventListener("click", function() {
@@ -205,16 +207,28 @@ document.querySelectorAll('input[name="envio"]').forEach(radio => {
             carrito = carrito.filter(producto => producto.id !== idProducto);
             // Guardar el carrito actualizado en localStorage
             localStorage.setItem("carrito", JSON.stringify(carrito));
-            // Actualizar la visualización del carrito
-            mostrarCarrito();
-            // Actualizar el badge del carrito y el total
-            actualizarBadgeCarrito();
-            actualizarTotal();
+            if (carrito.length === 0) {
+                // Si el carrito está vacío, recargar la página y mostrar la alerta
+                localStorage.setItem("carritoVacio", "true"); // Bandera para mostrar la alerta
+                location.reload();
+            } else {
+                // Si no está vacío, actualizar el carrito en la página
+                mostrarCarrito();
+                actualizarBadgeCarrito();
+                actualizarTotal();
+            }
         }
+        // Mostrar la alerta de carrito vacío al cargar la página
+        document.addEventListener("DOMContentLoaded", () => {
+            if (localStorage.getItem("carritoVacio") === "true") {
+            alert("El carrito está vacío");
+            localStorage.removeItem("carritoVacio"); // Limpiar la bandera
+      }
+    });
 
             function actualizarCantidadProducto(input) {
                 const idProducto = input.dataset.id;
-                const nuevaCantidad = parseInt(input.value, 10) || 1;
+                const nuevaCantidad = parseInt(input.value, 10) || 0;
 
                 carrito = carrito.map(producto => {
                     if (producto.id === idProducto) {
@@ -225,12 +239,23 @@ document.querySelectorAll('input[name="envio"]').forEach(radio => {
 
                 localStorage.setItem("carrito", JSON.stringify(carrito));
 
-              // Si la cantidad del producto es 0, recargar el carrito para reflejar la eliminación
-                         if (nuevaCantidad <= 0) {
-                         mostrarCarrito();
-                          }
-                    }
-            
+             // Si el carrito queda vacío, recargar la página y mostrar alerta
+             if (carrito.length === 0) {
+                 localStorage.setItem("carritoVacio", "true"); // Bandera para la alerta
+                location.reload(); // Recargar la página
+                    } else {
+             // Si el carrito aún tiene productos, actualizar la vista
+                mostrarCarrito();
+             }
+            }
+
+            // Mostrar la alerta de carrito vacío al cargar la página
+            document.addEventListener("DOMContentLoaded", () => {
+             if (localStorage.getItem("carritoVacio") === "true") {
+                alert("El carrito está vacío");
+                localStorage.removeItem("carritoVacio"); // Limpiar la bandera
+             }
+            });
 
             function actualizarSubtotal(input) {
                 const idProducto = input.dataset.id;
@@ -363,5 +388,31 @@ document.addEventListener('DOMContentLoaded', function() {
             mostrarAlertaCorreo();
         }
     });
+
+
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Obtener el modal y el botón de confirmar compra
+    const confirmarButton = document.getElementById('confirmarCompra');
+    
+    // Evento al hacer clic en el botón de confirmar compra
+    confirmarButton.addEventListener('click', function() {
+      // Cerrar el modal (usar el método de Bootstrap para cerrar el modal)
+      const modal = bootstrap.Modal.getInstance(document.getElementById('modalCompra'));
+      modal.hide(); // Cierra el modal
+
+      // Vaciar el carrito en localStorage
+      localStorage.removeItem('carrito'); // Asumiendo que 'carrito' es el nombre del item guardado en localStorage
+
+      // Mostrar la alerta de agradecimiento y recargar la página automáticamente cuando el usuario la cierre
+      setTimeout(function() {
+        alert('¡Gracias por su compra!'); // Muestra la alerta
+        location.reload(); // Recarga la página al cerrar la alerta
+      }, 2000); // Espera 2 segundos antes de mostrar la alerta
+    });
+  });
+
+
+
 
