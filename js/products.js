@@ -11,7 +11,7 @@
       let productos = []; // Variable para almacenar los productos
     
       const idCategoria = localStorage.getItem('catID');
-      fetch(`https://japceibal.github.io/emercado-api/cats_products/${idCategoria}.json`) 
+      fetch(`http://localhost:3000/catsproducts/${idCategoria}`) 
           .then(response => response.json())
           .then(datos => {
               productos = datos.products; // Guardar los productos en la variable
